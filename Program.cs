@@ -9,13 +9,15 @@ namespace ConsoleShop
     internal class Program
     {
 		// Global Class Variables
-		public static float money = 100;
+		public static float money;
 		public static string username;
+		public static float[] items = { 24, 28, 17, 22, 16, 24, 28, 18, 20, 27, 31, 29 };
+		public static float calc;
 
 		public static void ShopFront()
 		{
 			Console.WriteLine("*******************************************************\n");
-			Console.WriteLine("\tWelcome to Zeke's Media House\n");
+			Console.WriteLine("\tWelcome to Zeke's Media House, " + username + "\n");
 			Console.WriteLine("*******************************************************\n");
 			Console.WriteLine($"\tYour currrent shop balance is ${money}\n");
 			Console.WriteLine("\tMusic				- Press [1]");
@@ -53,13 +55,12 @@ namespace ConsoleShop
 		}
 		public static void Main()
 		{
+			money = 100;
 			Console.WriteLine("******************************************\n");
 			Console.WriteLine("\tWhat is your name?\n");
 			Console.WriteLine("******************************************\n");
 			username = Console.ReadLine();
 			Console.Clear();
-			Console.WriteLine("*******************************************************\n");
-			Console.WriteLine("\tWelcome, " + username + "\n");
 			ShopFront();
 			Console.ReadKey();
 		}
@@ -69,9 +70,13 @@ namespace ConsoleShop
 			Console.WriteLine("\tPress any button to continue.");
 			Console.ReadKey();
 			Console.Clear();
-			Console.WriteLine("\tHow much money would you like to add? (without $) ↓↓↓↓");
+			Console.WriteLine("*****************************************************************\n");
+			Console.WriteLine("\t↓↓↓↓ How much money would you like to add? (without $) ↓↓↓↓\n");
+			Console.WriteLine("*****************************************************************\n");
 			money = int.Parse(Console.ReadLine()) + money;
-			Console.WriteLine($"\tShop Funds available is now {money}");
+			Console.WriteLine($"\tShop Funds available is now ${money}");
+			Console.WriteLine("\tThank you for topping up at Zeke's Media House, Please comeback anytime\n");
+			Console.WriteLine("*****************************************************************\n");
 			Console.WriteLine("\tPress any button to go back to the menu.");
 			Console.ReadKey();
 			Console.Clear();
@@ -98,22 +103,26 @@ namespace ConsoleShop
 			switch (int.Parse(Console.ReadLine()))
             {
 				case 1:
-					money -= 24;
+					calc = items[0];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased J Cole | 2014 Forest Hills Drive Album for $24 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 2:
-					money -= 28;
+					calc = items[1];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Doja Cat | Planet Her Album for $28 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 3:
-					money -= 17;
+					calc = items[2];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Halsey | Manic Album for $17 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 4:
-					money -= 22;
+					calc = items[3];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Brent Faiyaz | Fuck the World Album for $22 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
@@ -148,22 +157,26 @@ namespace ConsoleShop
 			switch (int.Parse(Console.ReadLine()))
 			{
 				case 1:
-					money -= 16;
+					calc = items[4];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased SAW for $16 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 2:
-					money -= 24;
+					calc = items[5];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Black Panther for $24 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 3:
-					money -= 28;
+					calc = items[6];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Smile for $28 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 4:
-					money -= 18;
+					calc = items[7];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Scream for $18 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
@@ -198,22 +211,27 @@ namespace ConsoleShop
 			switch (int.Parse(Console.ReadLine()))
 			{
 				case 1:
-					money -= 20;
+					calc = items[8];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Counter-Strike Global-Offensiv for $20 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 2:
-					money -= 27;
+					calc = items[9];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Call Of Duty 4 for $27 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 3:
-					money -= 31;
+					calc = items[10];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Wii Sports for $31 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 4:
-					money -= 29;
+
+					calc = items[11];
+					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Diablo III for $29 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
@@ -226,6 +244,21 @@ namespace ConsoleShop
 					CategoryOne();
 					break;
 			}
+		}
+
+		public static void MoneyCheck()
+        {
+			if (money < calc)
+			{
+				Console.WriteLine("You don't have enough money to buy this item, please top up some more money before buying this item");
+				Console.WriteLine("\tPress any button to go to the menu");
+				Console.Clear();
+				ShopFront();
+			}
+			else
+            {
+				money = money - calc;
+            }
 		}
 	}
 }
