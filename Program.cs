@@ -11,7 +11,7 @@ namespace ConsoleShop
 		// Global Class Variables
 		public static float money;
 		public static string username;
-		public static float[] items = { 24, 28, 17, 22, 16, 24, 28, 18, 20, 27, 31, 29 };
+		public static float[] items = { 24, 28, 17, 22, 30, 16, 24, 28, 18, 26, 20, 27, 31, 29, 34 };
 		public static float calc;
 
 		public static void ShopFront()
@@ -26,7 +26,7 @@ namespace ConsoleShop
 			Console.WriteLine("\tAdd funds to Shop Balance	- Press [4]");
 			Console.WriteLine("\tExit Application		- Press [0]\n");
 			Console.WriteLine("*******************************************************\n");
-			Console.WriteLine("\t↓↓↓↓ Enter Your Option ↓↓↓↓");
+			Console.WriteLine("\t↓↓↓↓ Enter Your Option ↓↓↓↓\n");
 			Console.Write("\t");
 
 			switch (Console.ReadLine())
@@ -43,11 +43,14 @@ namespace ConsoleShop
 				case "4":
 					AddFunds();
 					break;
-				case "5":
+				case "0":
 					Environment.Exit(0);
 					break;
 				default:
-					Console.WriteLine("Please enter a valid option!");
+					Console.WriteLine("\n\tPlease enter a valid option!");
+					Console.WriteLine("\tPress any button");
+					Console.ReadKey();
+					Console.Clear();
 					ShopFront();
 					break;
 
@@ -95,7 +98,8 @@ namespace ConsoleShop
 			Console.WriteLine("\tDoja Cat | Planet Her Album ($28)		- to purchase press [2]");
 			Console.WriteLine("\tHalsey | Manic Album ($17)			- to purchase press [3]");
 			Console.WriteLine("\tBrent Faiyaz | Fuck the World Album ($22)	- to purchase press [4]");
-			Console.WriteLine("\tReturn to Shop Front				- Press [5]\n");
+			Console.WriteLine("\tJoji | SMITHEREENS ($30)			- to purchase press [5]");
+			Console.WriteLine("\tReturn to Shop Front				- Press [6]\n");
 			Console.WriteLine("*************************************************************************************\n");
 			Console.WriteLine("\t↓↓↓↓ Enter Your Option ↓↓↓↓");
 			Console.Write("\t");
@@ -105,28 +109,34 @@ namespace ConsoleShop
 				case 1:
 					calc = items[0];
 					MoneyCheck();
-					Console.WriteLine($"\tYou have purchased J Cole | 2014 Forest Hills Drive Album for $24 your remaining shop funds is ${money}");
+					Console.WriteLine($"\tYou have purchased J Cole | 2014 Forest Hills Drive Album for $24, your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 2:
 					calc = items[1];
 					MoneyCheck();
-					Console.WriteLine($"\tYou have purchased Doja Cat | Planet Her Album for $28 your remaining shop funds is ${money}");
+					Console.WriteLine($"\tYou have purchased Doja Cat | Planet Her Album for $28, your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 3:
 					calc = items[2];
 					MoneyCheck();
-					Console.WriteLine($"\tYou have purchased Halsey | Manic Album for $17 your remaining shop funds is ${money}");
+					Console.WriteLine($"\tYou have purchased Halsey | Manic Album for $17, your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 4:
 					calc = items[3];
 					MoneyCheck();
-					Console.WriteLine($"\tYou have purchased Brent Faiyaz | Fuck the World Album for $22 your remaining shop funds is ${money}");
+					Console.WriteLine($"\tYou have purchased Brent Faiyaz | Fuck the World Album for $22, your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 5:
+					calc = items[4];
+					MoneyCheck();
+					Console.WriteLine($"\tYou have purchased Joji | SMITHEREENS Album for $30, your remaining shop funds is ${money}");
+					CategoryOne();
+					break;
+				case 6:
 					Console.Clear();
 					ShopFront();
 					break;
@@ -149,7 +159,8 @@ namespace ConsoleShop
 			Console.WriteLine("\tBlack Panther ($24)		- to purchase press [2]");
 			Console.WriteLine("\tSmile ($28)			- to purchase press [3]");
 			Console.WriteLine("\tScream ($18)			- to purchase press [4]");
-			Console.WriteLine("\tReturn to Shop Front		- Press [5]\n");
+			Console.WriteLine("\tPirates of the caribbean ($26)	- to purchase press [5]");
+			Console.WriteLine("\tReturn to Shop Front		- Press [6]\n");
 			Console.WriteLine("******************************************************************\n");
 			Console.WriteLine("\t↓↓↓↓ Enter Your Option ↓↓↓↓");
 			Console.Write("\t");
@@ -157,30 +168,36 @@ namespace ConsoleShop
 			switch (int.Parse(Console.ReadLine()))
 			{
 				case 1:
-					calc = items[4];
+					calc = items[5];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased SAW for $16 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 2:
-					calc = items[5];
+					calc = items[6];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Black Panther for $24 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 3:
-					calc = items[6];
+					calc = items[7];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Smile for $28 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 4:
-					calc = items[7];
+					calc = items[8];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Scream for $18 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 5:
+					calc = items[9];
+					MoneyCheck();
+					Console.WriteLine($"\tYou have purchased Pirates of the caribbean for $26 your remaining shop funds is ${money}");
+					CategoryOne();
+					break;
+				case 6:
 					Console.Clear();
 					ShopFront();
 					break;
@@ -203,7 +220,8 @@ namespace ConsoleShop
 			Console.WriteLine("\tCall Of Duty 4 ($27)				- to purchase press [2]");
 			Console.WriteLine("\tWii Sports ($31)				- to purchase press [3]");
 			Console.WriteLine("\tDiablo III ($29)				- to purchase press [4]");
-			Console.WriteLine("\tReturn to Shop Front				- Press [5]\n");
+			Console.WriteLine("\tMinecraft ($34)					- to purchase press [5]");
+			Console.WriteLine("\tReturn to Shop Front				- Press [6]\n");
 			Console.WriteLine("*********************************************************************************\n");
 			Console.WriteLine("\t↓↓↓↓ Enter Your Option ↓↓↓↓\n");
 			Console.Write("\t");
@@ -211,31 +229,37 @@ namespace ConsoleShop
 			switch (int.Parse(Console.ReadLine()))
 			{
 				case 1:
-					calc = items[8];
+					calc = items[10];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Counter-Strike Global-Offensiv for $20 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 2:
-					calc = items[9];
+					calc = items[11];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Call Of Duty 4 for $27 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 3:
-					calc = items[10];
+					calc = items[12];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Wii Sports for $31 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 4:
 
-					calc = items[11];
+					calc = items[13];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Diablo III for $29 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 5:
+					calc = items[14];
+					MoneyCheck();
+					Console.WriteLine($"\tYou have purchased Diablo III for $29 your remaining shop funds is ${money}");
+					CategoryOne();
+					break;
+				case 6:
 					Console.Clear();
 					ShopFront();
 					break;
