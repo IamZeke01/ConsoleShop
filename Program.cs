@@ -16,6 +16,7 @@ namespace ConsoleShop
 
 		public static void ShopFront()
 		{
+			// Menu structure
 			Console.WriteLine("*******************************************************\n");
 			Console.WriteLine("\tWelcome to Zeke's Media House, " + username + "\n");
 			Console.WriteLine("*******************************************************\n");
@@ -32,21 +33,27 @@ namespace ConsoleShop
 			switch (Console.ReadLine())
             {
 				case "1":
+					// Goes to Music Menu
 					CategoryOne();
 					break;
 				case "2":
+					// Goes to Movies Menu
 					CategoryTwo();
 					break;
 				case "3":
+					// Goees to Video Games Menu
 					CategoryThree();
 					break;
 				case "4":
+					// Goes to Add Funds Menu
 					AddFunds();
 					break;
 				case "0":
+					// Exits the Application
 					Environment.Exit(0);
 					break;
 				default:
+					// If anything that isnt an above option is said this will happen
 					Console.WriteLine("\n\tPlease enter a valid option!");
 					Console.WriteLine("\tPress any button");
 					Console.ReadKey();
@@ -58,7 +65,9 @@ namespace ConsoleShop
 		}
 		public static void Main()
 		{
+			// Sets our starting balance as 100
 			money = 100;
+			// Asks for our users name
 			Console.WriteLine("******************************************\n");
 			Console.WriteLine("\tWhat is your name?\n");
 			Console.WriteLine("******************************************\n");
@@ -69,10 +78,12 @@ namespace ConsoleShop
 		}
 
 		public static void AddFunds()
+		// Add Funds Category
         {
 			Console.WriteLine("\tPress any button to continue.");
 			Console.ReadKey();
 			Console.Clear();
+			// Asks user how much money they would like to add to their amount
 			Console.WriteLine("*****************************************************************\n");
 			Console.WriteLine("\t↓↓↓↓ How much money would you like to add? (without $) ↓↓↓↓\n");
 			Console.WriteLine("*****************************************************************\n");
@@ -87,10 +98,12 @@ namespace ConsoleShop
 		}
 
 		public static void CategoryOne()
+		// Music Category
         {
 			Console.WriteLine("\tPress any button to continue.");
 			Console.ReadKey();
 			Console.Clear();
+			// Display Menu
 			Console.WriteLine("**************************************************************************************\n");
 			Console.WriteLine($"\tYour currrent shop balance is ${money}.\n");
 			Console.WriteLine("************ Music Products **************************************************\n");
@@ -107,51 +120,63 @@ namespace ConsoleShop
 			switch (int.Parse(Console.ReadLine()))
             {
 				case 1:
+					// Code to purchase item number 1
 					calc = items[0];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased J Cole | 2014 Forest Hills Drive Album for $24, your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 2:
+					// Code to purchase item number 2
 					calc = items[1];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Doja Cat | Planet Her Album for $28, your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 3:
+					// Code to purchase item number 3
 					calc = items[2];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Halsey | Manic Album for $17, your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 4:
+					// Code to purchase item number 4
 					calc = items[3];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Brent Faiyaz | Fuck the World Album for $22, your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 5:
+					// Code to purchase item number 5
 					calc = items[4];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Joji | SMITHEREENS Album for $30, your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 6:
+					// Clears console and goes back to main menu
 					Console.Clear();
 					ShopFront();
 					break;
 				default:
-					Console.WriteLine("Please eneter a valid option!");
-					CategoryOne();
+					// If anything else is said this will be prompted
+					Console.WriteLine("\n\tPlease enter a valid option!");
+					Console.WriteLine("\tPress any button");
+					Console.ReadKey();
+					Console.Clear();
+					CategoryOne;
 					break;
 			}
 		}
 
 		public static void CategoryTwo()
+		// Movie Category
 		{
 			Console.WriteLine("\tPress any button to continue.");
 			Console.ReadKey();
 			Console.Clear();
+			// Display Menu
 			Console.WriteLine("******************************************************************\n");
 			Console.WriteLine($"\tYour currrent shop balance is ${money}.\n");
 			Console.WriteLine("************ Movie Products **************************************\n");
@@ -168,51 +193,63 @@ namespace ConsoleShop
 			switch (int.Parse(Console.ReadLine()))
 			{
 				case 1:
+					// Code to purchase item number 6
 					calc = items[5];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased SAW for $16 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 2:
+					// Code to purchase item number 7
 					calc = items[6];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Black Panther for $24 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 3:
+					// Code to purchase item number 8
 					calc = items[7];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Smile for $28 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 4:
+					// Code to purchase item number 9
 					calc = items[8];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Scream for $18 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 5:
+					// Code to purchase item number 10
 					calc = items[9];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Pirates of the caribbean for $26 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 6:
+					// Clears console and goes back to main menu
 					Console.Clear();
 					ShopFront();
 					break;
 				default:
-					Console.WriteLine("Please eneter a valid option!");
-					CategoryOne();
+					// If anything else is said this will be prompted
+					Console.WriteLine("\n\tPlease enter a valid option!");
+					Console.WriteLine("\tPress any button");
+					Console.ReadKey();
+					Console.Clear();
+					CategoryTwo;
 					break;
 			}
 		}
 
 		public static void CategoryThree()
+		// Video Game Category
 		{
 			Console.WriteLine("\tPress any button to continue.");
 			Console.ReadKey();
 			Console.Clear();
+			// Display Menu
 			Console.WriteLine("*********************************************************************************\n");
 			Console.WriteLine($"\tYour currrent shop balance is ${money}.\n");
 			Console.WriteLine("************ Game Products ******************************************************\n");
@@ -229,50 +266,61 @@ namespace ConsoleShop
 			switch (int.Parse(Console.ReadLine()))
 			{
 				case 1:
+					// Code to purchase item number 11
 					calc = items[10];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Counter-Strike Global-Offensiv for $20 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 2:
+					// Code to purchase item number 12
 					calc = items[11];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Call Of Duty 4 for $27 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 3:
+					// Code to purchase item number 13
 					calc = items[12];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Wii Sports for $31 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 4:
-
+					// Code to purchase item number 14
 					calc = items[13];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Diablo III for $29 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 5:
+					// Code to purchase item number 15
 					calc = items[14];
 					MoneyCheck();
 					Console.WriteLine($"\tYou have purchased Diablo III for $29 your remaining shop funds is ${money}");
 					CategoryOne();
 					break;
 				case 6:
+					// Clears console and goes back to the main menu
 					Console.Clear();
 					ShopFront();
 					break;
 				default:
-					Console.WriteLine("Please eneter a valid option!");
-					CategoryOne();
+					// If anything else is said this will be prompted
+					Console.WriteLine("\n\tPlease enter a valid option!");
+					Console.WriteLine("\tPress any button");
+					Console.ReadKey();
+					Console.Clear();
+					CategoryThree;
 					break;
 			}
 		}
 
 		public static void MoneyCheck()
+		// Checks if you have enough money
         {
 			if (money < calc)
+			// if money is less than the price of the item it will say the following
 			{
 				Console.WriteLine("You don't have enough money to buy this item, please top up some more money before buying this item");
 				Console.WriteLine("\tPress any button to go to the menu");
@@ -280,6 +328,7 @@ namespace ConsoleShop
 				ShopFront();
 			}
 			else
+			// if you have enough money to purchase the item it will deduced the money
             {
 				money = money - calc;
             }
