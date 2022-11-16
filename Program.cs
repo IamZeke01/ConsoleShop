@@ -165,7 +165,7 @@ namespace ConsoleShop
 					Console.WriteLine("\tPress any button");
 					Console.ReadKey();
 					Console.Clear();
-					CategoryOne;
+					CategoryOne();
 					break;
 			}
 		}
@@ -238,7 +238,7 @@ namespace ConsoleShop
 					Console.WriteLine("\tPress any button");
 					Console.ReadKey();
 					Console.Clear();
-					CategoryTwo;
+					CategoryTwo();
 					break;
 			}
 		}
@@ -311,7 +311,7 @@ namespace ConsoleShop
 					Console.WriteLine("\tPress any button");
 					Console.ReadKey();
 					Console.Clear();
-					CategoryThree;
+					CategoryThree();
 					break;
 			}
 		}
